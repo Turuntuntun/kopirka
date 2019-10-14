@@ -19,4 +19,16 @@ class TaskController extends Controller
         }
         $this->view->render('Добавление задачи');
     }
+
+    public function deleteAction()
+    {
+        if (isset($_GET['delete'])) {
+            $this->model->deleteTask($_GET['delete']);
+        }
+        $result = $this->model->getNews();
+        $vars = [
+            'tasks' => $result,
+        ];
+        $this->view->render('Удаление задачи' ,$vars);
+    }
 }
