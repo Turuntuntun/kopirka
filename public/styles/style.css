@@ -1,0 +1,25 @@
+input[type='text'],input[type='password']{
+    display: block;
+    border:1px solid gray;
+    outline: none;
+    padding: 8px;
+    border-radius: 30px;
+    margin: 8px auto;
+}
+div{
+    width: 400px;
+    margin:  0 auto;
+    text-align: center;
+}
+table{
+    margin: 0 auto;
+}
+input[type = 'submit']{
+    width: 200px;
+    margin-top: 20px;
+    border:1px solid gray;
+    outline: none;
+    padding: 8px;
+    border-radius: 30px;
+    cursor: pointer;
+}
