@@ -8,8 +8,14 @@
 
 namespace application\controllers;
 
+use application\core\Controller;
 
-class Second_taskController
+class Second_taskController extends Controller
+
 {
-
+    public function indexAction()
+    {
+        $this->view->layout = 'second';
+        $this->view->render('Вторая задача');
+    }
 }

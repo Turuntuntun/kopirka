@@ -8,8 +8,9 @@
 
 namespace application\modeles;
 
+use application\core\Model;
 
-class Second_task
+class Second_task extends Model
 {
 
 }
