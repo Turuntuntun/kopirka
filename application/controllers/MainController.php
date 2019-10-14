@@ -15,8 +15,10 @@ class MainController extends Controller
     public function indexAction()
     {
         $result = $this->model->getNews();
+        $count  = $this->model->getCount();
         $vars = [
             'tasks' => $result,
+            'count' => $count
         ];
 
         $this->view->render('Главная страница', $vars);
