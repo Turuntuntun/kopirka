@@ -19,12 +19,13 @@ return [
         'controller' => 'task',
         'action' => 'delete'
     ],
+
+    'second_task' => [
+        'controller' => 'second_task',
+        'action' => 'index'
+    ],
     '' => [
         'controller' => 'main',
         'action' => 'index'
     ],
-    'second_task' => [
-        'controller' => 'second_task',
-        'action' => 'index'
-    ]
 ];
