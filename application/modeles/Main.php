@@ -12,9 +12,27 @@ use application\core\Model;
 
 class Main extends Model
 {
+
+    public $notesOnPage = 3;
     public function getNews()
     {
-        $result = $this->db->row('SELECT email,name,text FROM tasks');
-        return $result;
+        $page = $this->getPage();
+        $from = ($page - 1) * $this->notesOnPage;
+        $select = $this->db->row("SELECT email,name,text FROM tasks WHERE id > 0  LIMIT $from,$this->notesOnPage");
+        return $select;
+    }
+    public function getCount()
+    {
+        $select = $this->db->column("SELECT COUNT(*)FROM tasks");
+        $count = ceil($select/$this->notesOnPage);
+        return $count;
+    }
+
+    public function getPage(){
+        if ( isset($_GET['page'])) {
+            return $_GET['page'];
+        } else {
+            return 1;
+        }
     }
 }
