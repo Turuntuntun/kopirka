@@ -12,8 +12,14 @@ use application\core\Controller;
 
 class LoginController extends Controller
 {
-    public function authAction(){
+    public function authAction()
+    {
+        if (empty($_COOKIE['ID_USER'])) {
 
-        $this->view->render('Вход');
+            if (isset($_POST['login']) and isset($_POST['pass'])) {
+                $this->model->checkAuth($_POST['login'], $_POST['pass']);
+            }
+            $this->view->render('Вход');
+        }
     }
 }
